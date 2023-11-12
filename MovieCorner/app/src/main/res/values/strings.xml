@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Movie Corner</string>
+    <string name="release_date">Release Date: %s</string>
+    <string name="no_results">No Results</string>
+    <string name="btn_retry">Retry</string>
+
+    <string name="movie_detail_label_language">Language</string>
+    <string name="movie_detail_label_popularity">Popularity</string>
+    <string name="movie_detail_label_votes">Votes</string>
+    <string name="movie_detail_label_synopsis">Synopsis</string>
+    <string name="movie_transition_name">movie_%1$s</string>
+    <string name="movie_detail_transition_name">movie_detail</string>
+</resources>
