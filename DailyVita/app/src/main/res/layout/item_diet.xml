@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="diet"
+            type="com.morning_tea.dailyvita.domain.model.Diet" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/chk_diet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@{diet.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tooltip"
+            android:layout_width="56dp"
+            android:layout_height="0dp"
+            android:scaleType="center"
+            android:src="@drawable/baseline_error_outline_24"
+            app:tint="#FF39A7FF"
+            android:visibility="@{diet.id == 0 ? View.GONE: View.VISIBLE}"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/chk_diet"
+            app:layout_constraintTop_toTopOf="@id/chk_diet"
+            app:layout_constraintBottom_toBottomOf="@id/chk_diet"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

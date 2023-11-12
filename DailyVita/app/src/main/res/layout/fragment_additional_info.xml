@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/primary">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_get_result">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.morning_tea.dailyvita.ui.custom.QuestionTextView
+                    android:id="@+id/tv_sun_exposure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:title="@string/daily_exposure_title"
+                    app:isRequired="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rg_daily_exposure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_sun_exposure">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_exposure_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Yes"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_exposure_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="No"/>
+
+                </RadioGroup>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/error_exposure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/design_default_color_error"
+                    android:paddingVertical="8dp"
+                    android:visibility="gone"
+                    android:text="@string/error_required"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rg_daily_exposure" />
+
+                <com.morning_tea.dailyvita.ui.custom.QuestionTextView
+                    android:id="@+id/tv_smoke"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:title="@string/smoke_title"
+                    app:isRequired="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/error_exposure" />
+
+                <RadioGroup
+                    android:id="@+id/rg_smoke"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_smoke">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_smoke_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="Yes"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_smoke_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="No"/>
+
+                </RadioGroup>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/error_smoke"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/design_default_color_error"
+                    android:paddingVertical="8dp"
+                    android:text="@string/error_required"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rg_smoke" />
+
+                <com.morning_tea.dailyvita.ui.custom.QuestionTextView
+                    android:id="@+id/tv_alcoholic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:title="@string/alcohol_title"
+                    android:layout_marginTop="8dp"
+                    app:isRequired="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/error_smoke" />
+
+                <RadioGroup
+                    android:id="@+id/rg_alcoholic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_alcoholic">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_zero_to_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="0 - 1"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_two_to_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="2 - 5"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rd_five_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="5 +"/>
+
+                </RadioGroup>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/error_alcohol"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/design_default_color_error"
+                    android:paddingVertical="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    android:text="@string/error_required"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rg_alcoholic"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_get_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="16dp"
+            android:theme="@style/Theme.DailyVita.Button"
+            android:textStyle="bold"
+            android:text="Get my personalized vitamin"
+            app:cornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

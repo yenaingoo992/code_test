@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Daily Vita</string>
+
+    <string name="welcome_header">Welcome to Daily Vita</string>
+    <string name="welcome_title">Hello, we are here to make your life healthier and happier</string>
+    <string name="welcome_message">We will ask couple of questions to better understand your vitamin need</string>
+
+    <string name="health_concern_title">Select the top health concerns.</string>
+    <string name="health_concern_up_to">(upto 5)</string>
+    <string name="health_concern_Prioritize">Prioritize</string>
+
+    <string name="diets_title">Select the diets you follow.</string>
+    <string name="daily_exposure_title">Is your daily exposure to sun is limited?</string>
+    <string name="smoke_title">Do you currently smoke (tobacco or marijuana)?</string>
+    <string name="alcohol_title">Is your daily exposure to sun is limited?</string>
+
+    <string name="error_required">This field is required.</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+</resources>
